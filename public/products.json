@@ -1,0 +1,13 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "number": 1,
+      "title": "Nex Playground",
+      "description": "Transforms screen time into active play with AI-powered motion tracking games. 1  Engage your family in a world of fun, physical activity, and shared experiences, all from the comfort of your living room. 2  It's playtime reimagined, encouraging movement and connection for all ages. 1 ",
+      "image": "nex_play.jpg",
+      "affiliateLink": "https://amzn.to/44s9FH4",
+      "category": "Audio"
+    }
+  ]
+}
