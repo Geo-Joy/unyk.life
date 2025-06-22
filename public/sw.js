@@ -1,4 +1,4 @@
-const CACHE_NAME = 'affiliate-showcase-v1';
+const CACHE_NAME = 'unyk-life-v2';
 const urlsToCache = [
   '/',
   '/style.css',
