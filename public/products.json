@@ -3,11 +3,20 @@
     {
       "id": "1",
       "number": 1,
-      "title": "Nex Playground",
+      "title": "Games That Move You",
       "description": "Transforms screen time into active play with AI-powered motion tracking games. Engage your family in a world of fun, physical activity, and shared experiences, all from the comfort of your living room. It's playtime reimagined, encouraging movement and connection for all ages.",
       "image": "nex_play.jpg",
       "affiliateLink": "https://amzn.to/44s9FH4",
-      "category": "Audio"
-    }
+      "category": "games"
+    },
+    {
+      "id": "2",
+      "number": 2,
+      "title": "Interlocking Baby Play Mat",
+      "description": "he perfect addition to your child's playtime! These colourful mats create a safe and comfortable area for your little one to crawl, play, and nap on.",
+      "image": "interlock_foam.jpg",
+      "affiliateLink": "https://amzn.to/4kN483y",
+      "category": "kids_play"
+    },
   ]
 }
