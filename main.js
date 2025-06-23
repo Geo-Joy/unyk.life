@@ -6,7 +6,15 @@ let allProducts = [];
 // Load products from JSON file
 async function loadProducts() {
   try {
-    const response = await fetch('/products.json');
+    // Add cache-busting parameter to ensure fresh data
+    const timestamp = new Date().getTime();
+    const response = await fetch(`/products.json?v=${timestamp}`, {
+      cache: 'no-cache',
+      headers: {
+        'Cache-Control': 'no-cache',
+        'Pragma': 'no-cache'
+      }
+    });
     if (!response.ok) {
       throw new Error('Failed to load products');
     }
@@ -246,11 +254,11 @@ document.addEventListener('DOMContentLoaded', () => {
   new ProductShowcase();
 });
 
-// Add service worker for caching (optional)
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(() => console.log('Service Worker registered'))
-      .catch(() => console.log('Service Worker registration failed'));
-  });
-}
+// Service worker disabled for no-cache approach
+// if ('serviceWorker' in navigator) {
+//   window.addEventListener('load', () => {
+//     navigator.serviceWorker.register('/sw.js')
+//       .then(() => console.log('Service Worker registered'))
+//       .catch(() => console.log('Service Worker registration failed'));
+//   });
+// }
