@@ -20,13 +20,15 @@ async function loadProducts() {
     }
     const data = await response.json();
     
-    // Process products to use local images
-    allProducts = data.products.map(product => ({
-      ...product,
-      image: `/images/${product.image}`,
-      // Add fallback image if local image fails to load
-      fallbackImage: `https://via.placeholder.com/400x300/667eea/white?text=${encodeURIComponent(product.title)}`
-    }));
+    // Process products and sort in descending order (newest first)
+    allProducts = data.products
+      .sort((a, b) => b.number - a.number)
+      .map(product => ({
+        ...product,
+        image: `/images/${product.image}`,
+        // Add fallback image if local image fails to load
+        fallbackImage: `https://via.placeholder.com/400x300/667eea/white?text=${encodeURIComponent(product.title)}`
+      }));
     
     return allProducts;
   } catch (error) {
@@ -165,14 +167,14 @@ class ProductShowcase {
 
   trackClick(product) {
     // Optional: Add analytics tracking here
-    console.log(`Product clicked: ${product.title} (${product.id})`);
+    console.log(`Product clicked: ${product.title} (${product.number})`);
     
     // Example: Send to Google Analytics if available
     if (typeof gtag !== 'undefined') {
       gtag('event', 'click', {
         event_category: 'affiliate_link',
         event_label: product.title,
-        value: product.id
+        value: product.number
       });
     }
   }

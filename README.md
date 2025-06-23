@@ -78,8 +78,7 @@ npm run build
 **Step 2:** Add product entry to `public/products.json`
 ```json
 {
-  "id": "wellness-journal",
-  "number": 4,
+  "number": 3,
   "title": "Mindfulness Journal", 
   "description": "A beautifully designed journal to help you practice gratitude and mindfulness daily.",
   "image": "wellness-journal.jpg",
